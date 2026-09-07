@@ -1,1 +1,146 @@
+ * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0f172a;
+    color: #f8fafc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#homeScreen, #gameScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #38bdf8;
+}
+
+/* Scoreboard layout jo red box me chahiye */
+.scoreboard {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background: #1e293b;
+    padding: 12px 20px;
+    border-radius: 8px;
+}
+
+/* Round aur Turn text jo white box ke liye hain */
+.info-text {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+    color: #94a3b8;
+    font-size: 1rem;
+    background: #1e293b;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 100%;
+    aspect-ratio: 1;
+    margin-bottom: 25px;
+}
+
+.cell {
+    background-color: #1e293b;
+    border: none;
+    border-radius: 12px;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s, transform 0.1s;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.cell:active {
+    transform: scale(0.95);
+}
+
+.cell.o {
+    color: #38bdf8;
+}
+
+.cell.x {
+    color: #f43f5e;
+}
+
+.cell.win {
+    background-color: #065f46;
+    color: #34d399;
+}
+
+button#playBtn, button#resetBtn {
+    background-color: #38bdf8;
+    color: #0f172a;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 100%;
+}
+
+button#playBtn:hover, button#resetBtn:hover {
+    background-color: #0ea5e9;
+}
+
+#message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+#messageTitle {
+    font-size: 3rem;
+    color: #38bdf8;
+    margin-bottom: 10px;
+}
+
+#messageSub {
+    font-size: 1.2rem;
+    color: #94a3b8;
+}
 
