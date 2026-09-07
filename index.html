@@ -1,1 +1,47 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zero-Kata (Tic-Tac-Toe)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <!-- Home Screen -->
+    <div id="homeScreen">
+        <h1>Zero-Kata</h1>
+        <button id="playBtn">PLAY GAME</button>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="gameScreen" class="hidden">
+        
+        <!-- Scoreboard (O and X scores side by side) -->
+        <div class="scoreboard">
+            <span id="oScore">0 Wins</span>
+            <span id="xScore">0 Wins</span>
+        </div>
+
+        <!-- Round and Turn Info -->
+        <div class="info-text">
+            <span id="roundText">Round 1</span>
+            <span id="turnText">O's Turn</span>
+        </div>
+
+        <!-- Game Board -->
+        <div id="board"></div>
+
+        <!-- Reset Button -->
+        <button id="resetBtn">RESET SCORE</button>
+    </div>
+
+    <!-- Message Overlay (Win / Draw Popup) -->
+    <div id="message" class="hidden">
+        <h2 id="messageTitle"></h2>
+        <p id="messageSub"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
