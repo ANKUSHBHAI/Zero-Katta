@@ -1,4 +1,4 @@
- * {
+  * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #0f172a;
+    background: linear-gradient(135deg, #0f172a 0%, #020617 100%);
     color: #f8fafc;
     display: flex;
     justify-content: center;
@@ -25,107 +25,165 @@ body {
     align-items: center;
     justify-content: center;
     width: 100%;
-    max-width: 400px;
+    max-width: 380px;
     padding: 20px;
     text-align: center;
 }
 
 h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: 2.8rem;
+    margin-bottom: 25px;
     color: #38bdf8;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
 }
 
-/* Scoreboard layout jo red box me chahiye */
+/* Professional Scoreboard */
 .scoreboard {
     display: flex;
     justify-content: space-between;
     width: 100%;
     margin-bottom: 12px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    background: #1e293b;
+    font-size: 1.05rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #0ea5e9, #0284c7);
+    color: #ffffff;
     padding: 12px 20px;
-    border-radius: 8px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.2);
 }
 
-/* Round aur Turn text jo white box ke liye hain */
+/* Professional Info Box */
 .info-text {
     display: flex;
     justify-content: space-between;
     width: 100%;
     margin-bottom: 20px;
-    color: #94a3b8;
-    font-size: 1rem;
-    background: #1e293b;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    font-weight: 600;
+    background: rgba(30, 41, 59, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     padding: 10px 20px;
-    border-radius: 8px;
+    border-radius: 12px;
 }
 
 #board {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    gap: 12px;
     width: 100%;
     aspect-ratio: 1;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .cell {
     background-color: #1e293b;
-    border: none;
-    border-radius: 12px;
-    font-size: 3rem;
-    font-weight: bold;
+    border: 2px solid rgba(255, 255, 255, 0.05);
+    border-radius: 14px;
+    font-size: 3.2rem;
+    font-weight: 800;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.2s, transform 0.1s;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cell:hover {
+    border-color: rgba(56, 189, 248, 0.3);
+    background-color: #273548;
 }
 
 .cell:active {
-    transform: scale(0.95);
+    transform: scale(0.93);
 }
 
 .cell.o {
     color: #38bdf8;
+    text-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
 }
 
 .cell.x {
     color: #f43f5e;
+    text-shadow: 0 0 12px rgba(244, 63, 94, 0.4);
 }
 
 .cell.win {
-    background-color: #065f46;
+    background-color: rgba(6, 95, 70, 0.8);
+    border-color: #34d399;
     color: #34d399;
+    box-shadow: 0 0 15px rgba(52, 211, 153, 0.4);
 }
 
-button#playBtn, button#resetBtn {
-    background-color: #38bdf8;
-    color: #0f172a;
+/* Buttons styling */
+button#resetBtn {
+    background: linear-gradient(135deg, #f43f5e, #e11d48);
+    color: #ffffff;
     border: none;
-    padding: 12px 30px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 12px;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: all 0.2s ease;
     width: 100%;
+    box-shadow: 0 4px 12px rgba(244, 63, 94, 0.3);
 }
 
-button#playBtn:hover, button#resetBtn:hover {
-    background-color: #0ea5e9;
+button#resetBtn:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
 }
 
+button#resetBtn:active {
+    transform: scale(0.97);
+}
+
+/* Mode Selector */
+.mode-selector {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.mode-btn {
+    flex: 1;
+    background-color: #1e293b;
+    color: #94a3b8;
+    border: 2px solid #334155;
+    padding: 12px 10px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.mode-btn:hover {
+    border-color: #38bdf8;
+    color: #f8fafc;
+}
+
+.mode-btn.active {
+    background: linear-gradient(135deg, #38bdf8, #0284c7);
+    color: #0f172a;
+    border-color: #38bdf8;
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+}
+
+/* Popup Message Overlay */
 #message {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(15, 23, 42, 0.9);
+    background-color: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(6px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -134,13 +192,31 @@ button#playBtn:hover, button#resetBtn:hover {
 }
 
 #messageTitle {
-    font-size: 3rem;
+    font-size: 2.8rem;
     color: #38bdf8;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    font-weight: 800;
+    text-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
 }
 
 #messageSub {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #94a3b8;
+    font-weight: 600;
 }
 
+/* Ad Banner Container Magic Trick (Offline hone par hide ho jayega) */
+.ad-banner-container {
+    margin-top: 15px;
+    text-align: center;
+    width: 100%;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+
+.ad-banner-container:empty {
+    display: none;
+    margin: 0;
+}
