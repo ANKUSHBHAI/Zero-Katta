@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,13 +11,25 @@
     <!-- Home Screen -->
     <div id="homeScreen">
         <h1>Zero-Kata</h1>
-        <button id="playBtn">PLAY GAME</button>
+        
+        <!-- Mode Selection Buttons -->
+        <div class="mode-selector">
+            <button id="pvpBtn" class="mode-btn">Player vs Player</button><br><br>
+            <button id="pvcBtn" class="mode-btn">Player vs Computer</button>
+        </div>
+
+        <!-- Upcoming Games Button on Home Screen -->
+        <div style="margin-top: 25px; text-align: center;">
+            <button onclick="openUpcomingModal()" style="padding: 10px 20px; background: linear-gradient(135deg, #ff9800, #f57c00); color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; font-size: 14px;">
+                🚀 Upcoming Games
+            </button>
+        </div>
     </div>
 
     <!-- Game Screen -->
     <div id="gameScreen" class="hidden">
-        
-        <!-- Scoreboard (O and X scores side by side) -->
+
+        <!-- Scoreboard -->
         <div class="scoreboard">
             <span id="oScore">0 Wins</span>
             <span id="xScore">0 Wins</span>
@@ -34,6 +46,11 @@
 
         <!-- Reset Button -->
         <button id="resetBtn">RESET SCORE</button>
+
+        <!-- Chota Ratio Silent Banner Ad Container (320x50) at the bottom -->
+        <div class="ad-banner-container" style="margin-top: 20px; text-align: center; width: 100%; max-width: 320px; margin-left: auto; margin-right: auto; overflow: hidden;">
+            <!-- Yahan aap apna Adsterra ya Ad Network ka banner tag paste karenge -->
+        </div>
     </div>
 
     <!-- Message Overlay (Win / Draw Popup) -->
@@ -41,6 +58,13 @@
         <h2 id="messageTitle"></h2>
         <p id="messageSub"></p>
     </div>
+
+    <!-- Upcoming Game Popup Script -->
+    <script>
+        function openUpcomingModal() {
+            alert("Coming Soon: Humara naya bachon ka educational aur coloring game jald aa raha hai!");
+        }
+    </script>
 
     <script src="script.js"></script>
 </body>
