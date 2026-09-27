@@ -142,22 +142,21 @@ button#resetBtn:active {
     transform: scale(0.97);
 }
 
-/* Mode Selector - Stacked Professional Buttons */
+/* Mode Selector - Side-by-side buttons */
 .mode-selector {
     display: flex;
-    flex-direction: column;
-    gap: 12px;
+    gap: 10px;
     width: 100%;
     margin-bottom: 15px;
 }
 
 .mode-btn {
-    width: 100%;
+    flex: 1;
     background-color: #1e293b;
     color: #f8fafc;
     border: 2px solid #334155;
-    padding: 14px;
-    font-size: 1rem;
+    padding: 12px 8px;
+    font-size: 0.85rem;
     font-weight: 700;
     border-radius: 12px;
     cursor: pointer;
